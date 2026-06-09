@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .exercicio { background: #fff; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        button { padding: 8px 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-right: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Botão com mensagem -->
+    <div class="exercicio">
+        <h3>1. Botão com mensagem</h3>
+        <button onclick="exibirMensagem()">Clique aqui</button>
+        <p id="msg1"></p>
+    </div>
+
+    <!-- 2. Alteração de texto na tela -->
+    <div class="exercicio">
+        <h3>2. Alteração de texto</h3>
+        <p id="textoParaMudar">Este é o texto inicial.</p>
+        <button onclick="alterarTexto()">Mudar Texto</button>
+    </div>
+
+    <!-- 3. Verificação de idade -->
+    <div class="exercicio">
+        <h3>3. Verificação de idade</h3>
+        <input type="number" id="idade" placeholder="Digite sua idade">
+        <button onclick="verificarIdade()">Verificar</button>
+        <p id="resultadoIdade"></p>
+    </div>
+
+    <!-- 4. Contador com laço -->
+    <div class="exercicio">
+        <h3>4. Contador (1 a 10)</h3>
+        <button onclick="contar()">Contar</button>
+        <p id="resultadoContador"></p>
+    </div>
+
+    <!-- 5. Sistema simples de notas -->
+    <div class="exercicio">
+        <h3>5. Sistema de Notas</h3>
+        <input type="number" id="nota" placeholder="Digite a nota (0 a 10)" step="0.1">
+        <button onclick="verificarNota()">Verificar Aprovação</button>
+        <p id="resultadoNota"></p>
+    </div>
+
+    <script>
+        // 1. Botão com mensagem
+        function exibirMensagem() {
+            alert("Bem-vindo(a)!");
+        }
+
+        // 2. Alteração de texto na tela
+        function alterarTexto() {
+            document.getElementById("textoParaMudar").innerText = "O texto foi alterado com sucesso!";
+        }
+
+        // 3. Verificação de idade
+        function verificarIdade() {
+            let idade = document.getElementById("idade").value;
+            let resultado = document.getElementById("resultadoIdade");
+
+            if (idade >= 18) {
+                resultado.innerText = "Maior de idade";
+            } else if (idade > 0) {
+                resultado.innerText = "Menor de idade";
+            } else {
+                resultado.innerText = "Digite uma idade válida!";
+            }
+        }
+
+        // 4. Contador com laço
+        function contar() {
+            let numeros = "";
+            for (let i = 1; i <= 10; i++) {
+                numeros += i + " ";
+            }
+            document.getElementById("resultadoContador").innerHTML = numeros;
+        }
+
+        // 5. Sistema simples de notas
+        function verificarNota() {
+            let nota = parseFloat(document.getElementById("nota").value);
+            let resultadoNota = document.getElementById("resultadoNota");
+
+            if (isNaN(nota)) {
+                resultadoNota.innerText = "Digite uma nota válida!";
+            } else if (nota >= 6) {
+                resultadoNota.innerText = "Aprovado";
+            } else {
+                resultadoNota.innerText = "Reprovado";
+            }
+        }
+    </script>
+</body>
+</html>
