@@ -10,12 +10,12 @@
                 font-family: Arial, sans-serif;
                 color: #f4f4f8;
                 min-height: 100vh;
-                background-color: #0c0f1a;
+                background-color: #1b1309;
                 background-image:
-                    radial-gradient(circle at top center, rgba(187, 134, 42, 0.18), transparent 28%),
-                    radial-gradient(circle at 20% 15%, rgba(255, 193, 74, 0.14), transparent 20%),
-                    radial-gradient(circle at 80% 10%, rgba(139, 216, 255, 0.18), transparent 18%),
-                    linear-gradient(180deg, #151a2d 0%, #2e1f10 45%, #3b2717 70%, #0f0d12 100%);
+                    radial-gradient(circle at top center, rgba(255, 172, 74, 0.18), transparent 28%),
+                    radial-gradient(circle at 20% 15%, rgba(255, 155, 50, 0.12), transparent 20%),
+                    radial-gradient(circle at 80% 10%, rgba(189, 130, 85, 0.18), transparent 18%),
+                    linear-gradient(180deg, #1e120d 0%, #2c1a0f 45%, #472918 70%, #1b1108 100%);
                 background-blend-mode: screen, screen, screen, normal;
                 position: relative;
                 overflow-x: hidden;
@@ -43,9 +43,9 @@
                 max-width: 960px;
                 margin: 40px auto;
                 padding: 28px 30px;
-                background: rgba(10, 13, 24, 0.88);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+                background: rgba(44, 22, 8, 0.92);
+                border: 1px solid rgba(255, 165, 80, 0.18);
+                box-shadow: 0 24px 80px rgba(95, 50, 20, 0.35);
                 border-radius: 24px;
                 backdrop-filter: blur(10px);
             }
@@ -71,9 +71,9 @@
                 margin: 40px auto;
                 padding: 28px 30px;
                 max-width: 960px;
-                background: rgba(10, 13, 24, 0.88);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+                background: rgba(48, 23, 9, 0.92);
+                border: 1px solid rgba(255, 165, 80, 0.15);
+                box-shadow: 0 24px 80px rgba(95, 50, 20, 0.35);
                 border-radius: 24px;
                 backdrop-filter: blur(10px);
             }
@@ -89,7 +89,7 @@
                 color: #ffd98e;
             }
             th {
-                background-color: rgba(187, 134, 42, 0.4);
+                background-color: rgba(224, 143, 53, 0.42);
             }
             .gallery-wrapper {
                 min-width: 260px;
@@ -129,6 +129,53 @@
                 font-size: 1rem;
                 color: #ffd98e;
                 text-shadow: 0 0 12px rgba(255, 199, 100, 0.45);
+            }
+            .cta-box {
+                max-width: 760px;
+                margin: 40px auto;
+                padding: 24px 28px;
+                text-align: center;
+                background: rgba(44, 22, 8, 0.92);
+                border: 1px solid rgba(255, 165, 80, 0.18);
+                box-shadow: 0 20px 60px rgba(95, 50, 20, 0.35);
+                border-radius: 24px;
+                backdrop-filter: blur(10px);
+            }
+            .cta-box h2 {
+                margin: 0 0 16px;
+                color: #ffd98e;
+            }
+            .cta-box p {
+                margin: 0 0 24px;
+                color: #f5d399;
+                line-height: 1.8;
+            }
+            .cta-box nav a {
+                display: inline-block;
+                margin-bottom: 22px;
+                padding: 10px 22px;
+                color: #0f1325;
+                background: rgba(255, 208, 117, 0.22);
+                border-radius: 16px;
+                text-decoration: none;
+                border: 1px solid rgba(255, 165, 80, 0.25);
+                font-weight: 700;
+            }
+            .cta-button {
+                padding: 16px 36px;
+                background: linear-gradient(135deg, #ffb347, #ff6f00);
+                color: #0c101d;
+                border: none;
+                border-radius: 999px;
+                font-size: 1rem;
+                font-weight: 800;
+                box-shadow: 0 16px 28px rgba(255, 122, 35, 0.35);
+                cursor: pointer;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 20px 34px rgba(255, 122, 35, 0.45);
             }
         </style>
     </head>
@@ -265,15 +312,18 @@
                     </div>
                 </div>
             </div>
-<h2>Para saber sobre as classes e raridade do brawlers, clique aqui:</h2>
-            
         </section>
-        <p>Quer saber qual é o meu brawler favorito?</p>
-        <button onclick="mostrarMensagemTick()">Clique aqui</button>
+        <section class="cta-box">
+            <h2>Para saber sobre as classes e raridade do brawlers, clique aqui:</h2>
+            <nav>
+                <a href="./classes.html">Clique aqui</a>
+            </nav>
+            <p>Quer saber qual é o meu brawler favorito?</p>
+            <button class="cta-button" onclick="mostrarMensagemTick()">Clique aqui</button>
+        </section>
         <script src="../meumain.js"></script>
     </body>
 </html>
-
 
 <!DOCTYPE html>
 <html>
@@ -281,21 +331,21 @@
         <title>
             Classes e Raridades dos Brawlers - Brawl Stars
         </title>
-        <style>     
+        <style>
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
                 color: #f4f4f8;
                 min-height: 100vh;
-                background-color: #0c0f1a;
+                background-color: #1b1309;
                 background-image:
-                    radial-gradient(circle at top center, rgba(187, 134, 42, 0.18), transparent 28%),
-                    radial-gradient(circle at 20% 15%, rgba(255, 193, 74, 0.14), transparent 20%),
-                    radial-gradient(circle at 80% 10%, rgba(139, 216, 255, 0.18), transparent 18%),
-                    linear-gradient(180deg, #151a2d 0%, #2e1f10 45%, #3b2717 70%, #0f0d12 100%);
+                    radial-gradient(circle at top center, rgba(255, 172, 74, 0.18), transparent 28%),
+                    radial-gradient(circle at 20% 15%, rgba(255, 155, 50, 0.12), transparent 20%),
+                    radial-gradient(circle at 80% 10%, rgba(189, 130, 85, 0.18), transparent 18%),
+                    linear-gradient(180deg, #1e120d 0%, #2c1a0f 45%, #472918 70%, #1b1108 100%);
                 background-blend-mode: screen, screen, screen, normal;
                 position: relative;
-                overflow-x: hidden; 
+                overflow-x: hidden;
             }
             body::before {
                 content: "";
@@ -320,9 +370,9 @@
                 max-width: 960px;
                 margin: 60px auto;
                 padding: 28px 30px;
-                background: rgba(10, 13, 24, 0.88);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+                background: rgba(44, 22, 8, 0.92);
+                border: 1px solid rgba(255, 165, 80, 0.18);
+                box-shadow: 0 24px 80px rgba(95, 50, 20, 0.35);
                 border-radius: 24px;
                 backdrop-filter: blur(10px);
             }
@@ -345,6 +395,26 @@
             }
             li b {
                 color: #ffd97d;
+            }
+            .button-row {
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+            }
+            .back-button {
+                display: inline-block;
+                padding: 14px 30px;
+                background: linear-gradient(135deg, #ffb347, #ff6f00);
+                color: #0c101d;
+                font-weight: 700;
+                border-radius: 999px;
+                text-decoration: none;
+                box-shadow: 0 16px 30px rgba(255, 122, 35, 0.3);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .back-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 20px 36px rgba(255, 122, 35, 0.45);
             }
         </style>
     </head>
@@ -372,9 +442,13 @@
                 <li><b>Lendário:</b> Brawlers extremamente raros e únicos, como Crow e Leon.</li>
                  <li><b>Ultra Lendário:</b> Brawlers extremamente raros e poderosos, como Kaze, Sirius e Tick.</li>
             </ul>
+            <div class="button-row">
+                <a class="back-button" href="Brawlapre.html">Voltar para a página inicial</a>
+            </div>
         </section>
     </body>
 </html>
+
 
 function mostrarMensagemTick() {
     alert('Eu sou main Tick!!');
