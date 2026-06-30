@@ -1,183 +1,12 @@
+/primeira parte, pagina inicial/
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="brawlapre.css">
         <title>informações básicas de Brawl Stars</title>
-        <style>
-            body {
-                margin: 0;
-                font-family: Arial, sans-serif;
-                color: #f4f4f8;
-                min-height: 100vh;
-                background-color: #1b1309;
-                background-image:
-                    radial-gradient(circle at top center, rgba(255, 172, 74, 0.18), transparent 28%),
-                    radial-gradient(circle at 20% 15%, rgba(255, 155, 50, 0.12), transparent 20%),
-                    radial-gradient(circle at 80% 10%, rgba(189, 130, 85, 0.18), transparent 18%),
-                    linear-gradient(180deg, #1e120d 0%, #2c1a0f 45%, #472918 70%, #1b1108 100%);
-                background-blend-mode: screen, screen, screen, normal;
-                position: relative;
-                overflow-x: hidden;
-            }
-            body::before {
-                content: "";
-                position: fixed;
-                inset: 0;
-                background-image:
-                    radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
-                    radial-gradient(circle, rgba(191, 232, 255, 0.45) 1px, transparent 1px);
-                background-size: 60px 60px, 120px 120px;
-                opacity: 0.24;
-                pointer-events: none;
-                mix-blend-mode: screen;
-            }
-            body::after {
-                content: "";
-                position: fixed;
-                inset: 0;
-                background: linear-gradient(180deg, transparent 55%, rgba(10, 6, 3, 0.66) 100%);
-                pointer-events: none;
-            }
-            header {
-                max-width: 960px;
-                margin: 40px auto;
-                padding: 28px 30px;
-                background: rgba(44, 22, 8, 0.92);
-                border: 1px solid rgba(255, 165, 80, 0.18);
-                box-shadow: 0 24px 80px rgba(95, 50, 20, 0.35);
-                border-radius: 24px;
-                backdrop-filter: blur(10px);
-            }
-            h1, h2 {
-                text-align: center;
-                color: #ffd98e;
-                text-shadow: 0 0 18px rgba(255, 199, 100, 0.55);
-            }
-            h1 mark, h2 mark {
-                background: rgba(219, 118, 17, 0.95);
-                color: #0c0e13;
-                padding: 0 12px;
-                border-radius: 8px;
-            }
-            p {
-                line-height: 1.75;
-            }
-            .content-row {
-                display: flex;
-                gap: 20px;
-                align-items: flex-start;
-                flex-wrap: wrap;
-                margin: 40px auto;
-                padding: 28px 30px;
-                max-width: 960px;
-                background: rgba(48, 23, 9, 0.92);
-                border: 1px solid rgba(255, 165, 80, 0.15);
-                box-shadow: 0 24px 80px rgba(95, 50, 20, 0.35);
-                border-radius: 24px;
-                backdrop-filter: blur(10px);
-            }
-            table {
-                border-collapse: collapse;
-            }
-            table, th, td {
-                border: 2px solid rgba(255, 255, 255, 0.2);
-            }
-            th, td {
-                padding: 12px 10px;
-                text-align: left;
-                color: #ffd98e;
-            }
-            th {
-                background-color: rgba(224, 143, 53, 0.42);
-            }
-            .gallery-wrapper {
-                min-width: 260px;
-                max-width: 320px;
-            }
-            .gallery-grid {
-                display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                gap: 10px;
-            }
-            .gallery-card {
-                text-align: center;
-                font-size: 0.85rem;
-                color: #ffd98e;
-            }
-            .gallery-card img {
-                width: 100%;
-                height: 80px;
-                object-fit: cover;
-                border-radius: 8px;
-                display: block;
-            }
-            .gallery-bottom {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 10px;
-                margin-top: 10px;
-            }
-            .gallery-bottom img {
-                width: 100%;
-                border-radius: 8px;
-                object-fit: cover;
-                display: block;
-            }
-            .gallery-wrapper h3 {
-                margin: 0 0 10px;
-                font-size: 1rem;
-                color: #ffd98e;
-                text-shadow: 0 0 12px rgba(255, 199, 100, 0.45);
-            }
-            .cta-box {
-                max-width: 760px;
-                margin: 40px auto;
-                padding: 24px 28px;
-                text-align: center;
-                background: rgba(44, 22, 8, 0.92);
-                border: 1px solid rgba(255, 165, 80, 0.18);
-                box-shadow: 0 20px 60px rgba(95, 50, 20, 0.35);
-                border-radius: 24px;
-                backdrop-filter: blur(10px);
-            }
-            .cta-box h2 {
-                margin: 0 0 16px;
-                color: #ffd98e;
-            }
-            .cta-box p {
-                margin: 0 0 24px;
-                color: #f5d399;
-                line-height: 1.8;
-            }
-            .cta-box nav a {
-                display: inline-block;
-                margin-bottom: 22px;
-                padding: 10px 22px;
-                color: #0f1325;
-                background: rgba(255, 208, 117, 0.22);
-                border-radius: 16px;
-                text-decoration: none;
-                border: 1px solid rgba(255, 165, 80, 0.25);
-                font-weight: 700;
-            }
-            .cta-button {
-                padding: 16px 36px;
-                background: linear-gradient(135deg, #ffb347, #ff6f00);
-                color: #0c101d;
-                border: none;
-                border-radius: 999px;
-                font-size: 1rem;
-                font-weight: 800;
-                box-shadow: 0 16px 28px rgba(255, 122, 35, 0.35);
-                cursor: pointer;
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-            }
-            .cta-button:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 20px 34px rgba(255, 122, 35, 0.45);
-            }
-        </style>
     </head>
     <body>
         <header>
@@ -318,12 +147,233 @@
             <nav>
                 <a href="./classes.html">Clique aqui</a>
             </nav>
-            <p>Quer saber qual é o meu brawler favorito?</p>
+            <h2>Quer saber qual é o meu brawler favorito?</h2>
             <button class="cta-button" onclick="mostrarMensagemTick()">Clique aqui</button>
         </section>
         <script src="../meumain.js"></script>
     </body>
 </html>
+
+brawlapre.css
+header {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 28px 30px;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 24px 80px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+
+.content-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    padding: 28px 30px;
+    max-width: 960px;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 24px 80px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+ 
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+    color: #ffd98e;
+}
+
+th {
+    background-color: rgba(224, 143, 53, 0.42);
+}
+
+
+.gallery-wrapper {
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.gallery-card {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #ffd98e;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.gallery-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.gallery-bottom img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-wrapper h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #ffd98e;
+    text-shadow: 0 0 12px rgba(255, 199, 100, 0.45);
+}
+
+
+.cta-box {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 24px 28px;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.cta-box h2 {
+    margin: 0 0 16px;
+    color: #ffd98e;
+}
+
+.cta-box p {
+    margin: 0 0 24px;
+    color: #f5d399;
+    line-height: 1.8;
+}
+
+
+.cta-box nav a {
+    width: 220px;
+    margin: 0 8px 16px;
+    padding: 14px 24px;
+    border-radius: 18px;
+    box-shadow: 0 0 0 2px rgba(255, 224, 138, 0.25), 0 12px 28px rgba(255, 90, 0, 0.45);
+}
+
+.cta-button {
+    padding: 16px 36px;
+    min-width: 240px;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Acessórios, poderes estelares e hipercargas</title>
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section>
+            <h1><mark>Acessórios, poderes estelares e hipercargas</mark></h1>
+            <p>Esses sistemas fazem muita diferença nas partidas de Brawl Stars porque alteram o estilo de combate, a sobrevivência e a forma como cada brawler se destaca. Eles podem mudar completamente a estratégia de uma equipe, principalmente em modos mais competitivos.</p>
+
+            <div class="button-row">
+                <a class="back-button" href="classes.html">Ir para Classes</a>
+                <a class="back-button" href="Brawlapre.html">Voltar para a página inicial</a>
+            </div>
+
+            <h2>Acessórios</h2>
+            <p>Os acessórios são itens que podem ser equipados por um brawler antes da partida. Cada um oferece um efeito diferente e costuma complementar o estilo de jogo do personagem. Geralmente, o jogador escolhe um entre os dois disponíveis para o brawler.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0TMz6HtF9PSHlsxZbBiuWU9tPDrZutSzg3tLo3eOHjQ&s=10" alt="Ilustração de acessórios de Brawl Stars" />
+
+            <div class="card-grid">
+                <article class="info-card">
+                    <h3>Escudo de Guerra</h3>
+                    <p>Oferece proteção extra e ajuda na sobrevivência em confrontos prolongados. É ótimo para brawlers que precisam se manter na frente.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Garrafa de Revitalização</h3>
+                    <p>Recupera energia de forma mais rápida, favorecendo brawlers que usam habilidades com frequência.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Foco de Combate</h3>
+                    <p>Aumenta a eficiência do dano em momentos decisivos, sendo excelente para quem quer pressionar o inimigo.</p>
+                </article>
+            </div>
+
+            <h2>Poderes estelares</h2>
+            <p>Os poderes estelares são melhorias especiais que podem ser desbloqueadas para os brawlers. Eles normalmente aumentam um efeito já existente ou adicionam uma vantagem extra durante a partida. São muito usados por jogadores que querem dar mais personalidade ao personagem.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz34YMtUvndWb_2hj20o-cSKQ0ZeVtccFY27mf0iEcag&s=10" alt="Ilustração de poderes estelares" />
+
+            <div class="card-grid">
+                <article class="info-card">
+                    <h3>Super mais forte</h3>
+                    <p>Melhora o poder da Super, deixando o ataque ou efeito ainda mais impactante. Funciona muito bem em brawlers que dependem da habilidade principal.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Velocidade aumentada</h3>
+                    <p>Melhora a mobilidade do brawler e ajuda a fugir ou alcançar alvos rapidamente. É ideal para personagens ágeis.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Defesa superior</h3>
+                    <p>Aumenta a resistência e a segurança em lutas, sendo excelente para tanques e brawlers que precisam aguentar muito dano.</p>
+                </article>
+            </div>
+
+            <h2>Hipercargas</h2>
+            <p>As hipercargas são uma forma de evoluir ainda mais os poderes do brawler. Elas aumentam a força das habilidades e podem virar uma partida inteira quando usadas no momento certo. São importantes em modos de confronto e para quem gosta de uma gameplay mais dinâmica.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdXUbOVjOGgcKpjlFrgnX6HFKkP8xdvs6I1KT5etKr0g&s=10" alt="Ilustração de hipercargas" />
+
+            <div class="card-grid">
+                <article class="info-card">
+                    <h3>Hipercarga de dano</h3>
+                    <p>Foca em aumentar o impacto dos ataques, destruindo inimigos com mais facilidade em combates rápidos.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Hipercarga de sobrevivência</h3>
+                    <p>Ajuda o brawler a resistir melhor aos ataques e a permanecer em campo por mais tempo.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Hipercarga de controle</h3>
+                    <p>Melhora o controle da área e facilita prender ou interromper o avanço do adversário.</p>
+                </article>
+            </div>
+
+            <div class="button-row">
+                <a class="back-button" href="classes.html">Ir para Classes</a>
+                <a class="back-button" href="Brawlapre.html">Voltar para a página inicial</a>
+            </div>
+        </section>
+    </body>
+</html>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -331,92 +381,8 @@
         <title>
             Classes e Raridades dos Brawlers - Brawl Stars
         </title>
-        <style>
-            body {
-                margin: 0;
-                font-family: Arial, sans-serif;
-                color: #f4f4f8;
-                min-height: 100vh;
-                background-color: #1b1309;
-                background-image:
-                    radial-gradient(circle at top center, rgba(255, 172, 74, 0.18), transparent 28%),
-                    radial-gradient(circle at 20% 15%, rgba(255, 155, 50, 0.12), transparent 20%),
-                    radial-gradient(circle at 80% 10%, rgba(189, 130, 85, 0.18), transparent 18%),
-                    linear-gradient(180deg, #1e120d 0%, #2c1a0f 45%, #472918 70%, #1b1108 100%);
-                background-blend-mode: screen, screen, screen, normal;
-                position: relative;
-                overflow-x: hidden;
-            }
-            body::before {
-                content: "";
-                position: fixed;
-                inset: 0;
-                background-image:
-                    radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
-                    radial-gradient(circle, rgba(191, 232, 255, 0.45) 1px, transparent 1px);
-                background-size: 60px 60px, 120px 120px;
-                opacity: 0.24;
-                pointer-events: none;
-                mix-blend-mode: screen;
-            }
-            body::after {
-                content: "";
-                position: fixed;
-                inset: 0;
-                background: linear-gradient(180deg, transparent 55%, rgba(10, 6, 3, 0.66) 100%);
-                pointer-events: none;
-            }
-            section {
-                max-width: 960px;
-                margin: 60px auto;
-                padding: 28px 30px;
-                background: rgba(44, 22, 8, 0.92);
-                border: 1px solid rgba(255, 165, 80, 0.18);
-                box-shadow: 0 24px 80px rgba(95, 50, 20, 0.35);
-                border-radius: 24px;
-                backdrop-filter: blur(10px);
-            }
-            h1, h2 {
-                text-align: center;
-                color: #ffd98e;
-                text-shadow: 0 0 18px rgba(255, 199, 100, 0.55);
-            }
-            h1 mark, h2 mark {
-                background: rgba(219, 118, 17, 0.95);
-                color: #0c0e13;
-                padding: 0 12px;
-                border-radius: 8px;
-            }
-            p, li {
-                line-height: 1.75;
-            }
-            ul {
-                padding-left: 1.3rem;
-            }
-            li b {
-                color: #ffd97d;
-            }
-            .button-row {
-                margin-top: 30px;
-                display: flex;
-                justify-content: center;
-            }
-            .back-button {
-                display: inline-block;
-                padding: 14px 30px;
-                background: linear-gradient(135deg, #ffb347, #ff6f00);
-                color: #0c101d;
-                font-weight: 700;
-                border-radius: 999px;
-                text-decoration: none;
-                box-shadow: 0 16px 30px rgba(255, 122, 35, 0.3);
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-            }
-            .back-button:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 20px 36px rgba(255, 122, 35, 0.45);
-            }
-        </style>
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="classes.css">
     </head>
     <body>
         <section>
@@ -443,6 +409,7 @@
                  <li><b>Ultra Lendário:</b> Brawlers extremamente raros e poderosos, como Kaze, Sirius e Tick.</li>
             </ul>
             <div class="button-row">
+                <a class="back-button" href="acessorios,poderes estrelas e hipercargas.html">Ir para Acessórios e Poderes</a>
                 <a class="back-button" href="Brawlapre.html">Voltar para a página inicial</a>
             </div>
         </section>
@@ -450,6 +417,498 @@
 </html>
 
 
+section {
+    max-width: 960px;
+    margin: 60px auto;
+    padding: 28px 30px;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 24px 80px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+.button-row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.back-button {
+    min-width: 260px;
+    padding: 14px 30px;
+    border-radius: 999px;
+    box-shadow: 0 0 0 2px rgba(255, 224, 138, 0.25), 0 16px 30px rgba(255, 90, 0, 0.45);
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f4f4f8;
+    min-height: 100vh;
+    background-color: #1b1309;
+    background-image:
+        radial-gradient(circle at top center, rgba(255, 172, 74, 0.18), transparent 28%),
+        radial-gradient(circle at 20% 15%, rgba(255, 155, 50, 0.12), transparent 20%),
+        radial-gradient(circle at 80% 10%, rgba(189, 130, 85, 0.18), transparent 18%),
+        linear-gradient(180deg, #1e120d 0%, #2c1a0f 45%, #472918 70%, #1b1108 100%);
+    background-blend-mode: screen, screen, screen, normal;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
+        radial-gradient(circle, rgba(191, 232, 255, 0.45) 1px, transparent 1px);
+    background-size: 60px 60px, 120px 120px;
+    opacity: 0.24;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(10, 6, 3, 0.66) 100%);
+    pointer-events: none;
+}
+
+
+h1, h2 {
+    text-align: center;
+    color: #fff2b8;
+    text-shadow: 0 0 12px rgba(255, 179, 71, 0.75), 0 0 24px rgba(255, 102, 0, 0.45);
+}
+
+h1 mark, h2 mark {
+    background: linear-gradient(135deg, #ffb347, #ff6f00);
+    color: #1a0f05;
+    padding: 0 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.35);
+}
+
+p, li {
+    line-height: 1.75;
+}
+
+ul {
+    padding-left: 1.3rem;
+}
+
+li b {
+    color: #ffd97d;
+}
+
+
+.cta-box nav a, .cta-button, .back-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background: linear-gradient(135deg, #ff8a00, #ff4d00);
+    color: #fff7dc;
+    border: 3px solid #ffe08a;
+    box-shadow: 0 0 0 2px rgba(255, 224, 138, 0.25), 0 16px 30px rgba(255, 90, 0, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box nav a::before, .cta-button::before, .back-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.cta-box nav a:hover, .cta-button:hover, .back-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    filter: brightness(1.08);
+    box-shadow: 0 0 0 3px rgba(255, 224, 138, 0.35), 0 20px 36px rgba(255, 90, 0, 0.55);
+}
+
+.cta-box nav a:hover::before, .cta-button:hover::before, .back-button:hover::before {
+    transform: translateX(100%);
+}
+tudooooooooo
+
+
+
 function mostrarMensagemTick() {
     alert('Eu sou main Tick!!');
 }
+meumain.js
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f4f4f8;
+    min-height: 100vh;
+    background-color: #1b1309;
+    background-image:
+        radial-gradient(circle at top center, rgba(255, 172, 74, 0.18), transparent 28%),
+        radial-gradient(circle at 20% 15%, rgba(255, 155, 50, 0.12), transparent 20%),
+        radial-gradient(circle at 80% 10%, rgba(189, 130, 85, 0.18), transparent 18%),
+        linear-gradient(180deg, #1e120d 0%, #2c1a0f 45%, #472918 70%, #1b1108 100%);
+    background-blend-mode: screen, screen, screen, normal;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
+        radial-gradient(circle, rgba(191, 232, 255, 0.45) 1px, transparent 1px);
+    background-size: 60px 60px, 120px 120px;
+    opacity: 0.24;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(10, 6, 3, 0.66) 100%);
+    pointer-events: none;
+}
+
+
+h1, h2 {
+    text-align: center;
+    color: #fff2b8;
+    text-shadow: 0 0 12px rgba(255, 179, 71, 0.75), 0 0 24px rgba(255, 102, 0, 0.45);
+}
+
+h1 mark, h2 mark {
+    background: linear-gradient(135deg, #ffb347, #ff6f00);
+    color: #1a0f05;
+    padding: 0 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.35);
+}
+
+p, li {
+    line-height: 1.75;
+}
+
+p {
+    line-height: 1.75;
+}
+
+ul {
+    padding-left: 1.3rem;
+}
+
+li b {
+    color: #ffd97d;
+}
+
+
+header {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 28px 30px;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 24px 80px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+section {
+    max-width: 960px;
+    margin: 60px auto;
+    padding: 28px 30px;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 24px 80px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto 30px;
+    border-radius: 16px;
+    border: 2px solid #ffb347;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0 30px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #2f1408, #5b240e);
+    border: 1px solid #ffb347;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.info-card h3 {
+    color: #ffd27d;
+    margin-top: 0;
+}
+
+.content-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    padding: 28px 30px;
+    max-width: 960px;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 24px 80px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+    color: #ffd98e;
+}
+
+th {
+    background-color: rgba(224, 143, 53, 0.42);
+}
+
+
+.gallery-wrapper {
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.gallery-card {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #ffd98e;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.gallery-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.gallery-bottom img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-wrapper h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #ffd98e;
+    text-shadow: 0 0 12px rgba(255, 199, 100, 0.45);
+}
+
+/* ===== CTA BOX ===== */
+.cta-box {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 24px 28px;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(70, 30, 10, 0.95), rgba(30, 15, 6, 0.96));
+    border: 2px solid rgba(255, 190, 90, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(95, 50, 20, 0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.cta-box h2 {
+    margin: 0 0 16px;
+    color: #ffd98e;
+}
+
+.cta-box p {
+    margin: 0 0 24px;
+    color: #f5d399;
+    line-height: 1.8;
+}
+
+
+.cta-box nav a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    margin: 0 8px 16px;
+    padding: 14px 24px;
+    color: #fff7dc;
+    background: linear-gradient(135deg, #ff8a00, #ff4d00);
+    border-radius: 18px;
+    text-decoration: none;
+    border: 3px solid #ffe08a;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 0 2px rgba(255, 224, 138, 0.25), 0 12px 28px rgba(255, 90, 0, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box nav a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.cta-box nav a:hover {
+    transform: translateY(-3px) scale(1.03);
+    filter: brightness(1.08);
+    box-shadow: 0 0 0 3px rgba(255, 224, 138, 0.35), 0 16px 34px rgba(255, 90, 0, 0.55);
+}
+
+.cta-box nav a:hover::before {
+    transform: translateX(100%);
+}
+
+.cta-button {
+    padding: 16px 36px;
+    min-width: 240px;
+    background: linear-gradient(135deg, #ff8a00, #ff4d00);
+    color: #fff7dc;
+    border: 3px solid #ffe08a;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 0 2px rgba(255, 224, 138, 0.25), 0 16px 30px rgba(255, 90, 0, 0.45);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    filter: brightness(1.08);
+    box-shadow: 0 0 0 3px rgba(255, 224, 138, 0.35), 0 20px 36px rgba(255, 90, 0, 0.55);
+}
+
+.cta-button:hover::before {
+    transform: translateX(100%);
+}
+
+
+.button-row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.back-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 260px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #ff8a00, #ff4d00);
+    color: #fff7dc;
+    font-weight: 900;
+    border: 3px solid #ffe08a;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 0 2px rgba(255, 224, 138, 0.25), 0 16px 30px rgba(255, 90, 0, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    filter: brightness(1.08);
+    box-shadow: 0 0 0 3px rgba(255, 224, 138, 0.35), 0 20px 36px rgba(255, 90, 0, 0.55);
+}
+
+.back-button:hover::before {
+    transform: translateX(100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
